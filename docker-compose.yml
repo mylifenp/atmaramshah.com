@@ -24,7 +24,7 @@ services:
       mail__options__host: "${EMAIL_DOMAIN}"
       mail__options__port: "${EMAIL_PORT}"
       mail__options__auth__user: "${EMAIL_USERNAME}"
-      mail__options__auth__pass: "${EMIAL_PASSWORD}"
+      mail__options__auth__pass: "${EMAIL_PASSWORD}"
 
   db:
     image: mysql:8.0
