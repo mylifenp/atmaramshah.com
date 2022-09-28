@@ -1,7 +1,6 @@
 version: '3.1'
 
 services:
-
   ghost:
     image: ghost:5-alpine
     restart: always
@@ -29,8 +28,15 @@ services:
   db:
     image: mysql:8.0
     restart: always
+    ports:
+      - "6033:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
+
+volumes:
+  dbdata:
